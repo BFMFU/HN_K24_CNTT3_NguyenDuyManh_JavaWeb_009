@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface GameDiskRepository {
 	List<GameDisk> getAll();
+	GameDisk getById(Long id);
 	List<GameDisk> getByTitleOrGenre(String key);
 	void save(GameDisk gameDisk);
 	void delete(Long id);

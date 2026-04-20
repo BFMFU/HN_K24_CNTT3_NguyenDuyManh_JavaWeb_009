@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface GameDiskService {
 	List<GameDisk> findAll();
+	GameDisk findById(Long id);
 	List<GameDisk> findByTitleOrGenre(String key);
 	void addGameDisk(GameDisk gameDisk);
 	void deleteGameDisk(Long id);

@@ -40,8 +40,8 @@
                 <td th:text="${game.quantity}"></td>
                 <td><img src="@{game.coverImage}" alt="No Image"></td>
                 <td>
-                    <button type="button" class="btn btn-primary">Sửa</button>
-                    <button type="button" class="btn btn-danger" onclick="confirm('Có xác nhận xóa hay không?')? '' :'' ">Xóa</button>
+                    <a th:href="@{/gameDisk/edit/{id}(id=${game.id})}" class="btn btn-primary">Sửa</a>
+                    <a th:href="@{/gameDisk/delete/{id}(id=${game.id})}" class="btn btn-danger" onclick="return confirm('Có xác nhận xóa hay không?')">Xóa</a>
                 </td>
 
             </tr>

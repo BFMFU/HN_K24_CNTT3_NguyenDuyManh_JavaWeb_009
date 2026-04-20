@@ -8,16 +8,16 @@ import jakarta.validation.constraints.Size;
 
 @Valid
 public class GameDisk {
-	@NotNull
+	@NotNull(message = "Id không được để trống")
 	private Long id;
-	@NotEmpty
-	@Size(min =3, max=100)
+	@NotEmpty(message = "Title không được để trống")
+	@Size(min =3, max=100, message = "Title phải có từ 3 đến 100 ký tự")
 	private String title;
-	@NotBlank
-	@Size(min =3)
+	@NotBlank(message = "Genre không được để trống")
+	@Size(min =3, message = "Genre phải có ít nhất 3 ký tự")
 	private String genre;
-	@NotNull
-	@Size(min =0)
+	@NotNull(message = "Quantity không được để trống")
+	@Size(min =0, message = "Quantity không được âm")
 	private Integer quantity;
 	private String coverImage;
 

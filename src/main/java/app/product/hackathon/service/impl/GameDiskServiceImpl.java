@@ -18,6 +18,11 @@ public class GameDiskServiceImpl implements GameDiskService {
 	}
 
 	@Override
+	public GameDisk findById(Long id) {
+		return gameDiskRepository.getById(id);
+	}
+
+	@Override
 	public List<GameDisk> findByTitleOrGenre(String key) {
 		return gameDiskRepository.getByTitleOrGenre(key);
 	}

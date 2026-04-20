@@ -23,6 +23,14 @@ public class GameDiskRepositoryImpl implements GameDiskRepository {
 	}
 
 	@Override
+	public GameDisk getById(Long id) {
+		return gameDisks.stream()
+			.filter(gameDisk -> gameDisk.getId().equals(id))
+			.findFirst()
+			.orElse(null);
+	}
+
+	@Override
 	public List<GameDisk> getByTitleOrGenre(String key) {
 		return gameDisks.stream().filter(gameDisk -> gameDisk.getTitle().contains(key) || gameDisk.getGenre().contains(key)).toList();
 	}
